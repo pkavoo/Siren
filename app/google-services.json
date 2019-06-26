@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "341943246718",
+    "firebase_url": "https://siren-31855.firebaseio.com",
+    "project_id": "siren-31855",
+    "storage_bucket": "siren-31855.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341943246718:android:e23e12ad0dd5bd51",
+        "android_client_info": {
+          "package_name": "com.example.siren"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "341943246718-u0uqvcjs41t412qr0oi46s3g914mq9hk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiXtxBjDaoCyhC9AOi_cgUoa53nG5eDGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "341943246718-u0uqvcjs41t412qr0oi46s3g914mq9hk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
