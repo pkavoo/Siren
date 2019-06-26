@@ -1,0 +1,4 @@
+#Wed Jun 26 08:32:00 EAT 2019
+base.0=D\:\\Projects\\Android\\Siren\\Siren\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\6
+path.0=classes.dex
+renamed.0=classes.dex

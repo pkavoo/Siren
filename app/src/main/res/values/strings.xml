@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Siren</string>
+    <string name="action_settings">settings</string>
+    <string name="title_activity_maps">settings</string>
+    <string name="emergency">settings</string>
+
+    <string name="incident_type">Choose your incident</string>
+
+
+    <string-array name="category">
+        <item>Choose your incident</item>
+        <item>Unknown</item>
+        <item>Road accident</item>
+        <item>Fire</item>
+        <item>Heart attack</item>
+        <item>Burns</item>
+        <item>Not breathing</item>
+        <item>Chocking</item>
+        <item>Drowning</item>
+        <item>Unconscious</item>
+        <item>Fainting</item>
+    </string-array>
+
+</resources>
