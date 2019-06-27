@@ -5230,6 +5230,7 @@ public final class R {
     public static final int select_dialog_multichoice_material=0x7f0c0038;
     public static final int select_dialog_singlechoice_material=0x7f0c0039;
     public static final int support_simple_spinner_dropdown_item=0x7f0c003a;
+    public static final int view_expanded_notofocation=0x7f0c003b;
   }
   public static final class menu {
     public static final int menu_main=0x7f0d0000;

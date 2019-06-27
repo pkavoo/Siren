@@ -5,6 +5,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -50,6 +51,17 @@ public class Formactivity extends AppCompatActivity {
             public void onClick(View view) {
                 name1 = name.getText().toString();
                 phone1 = phone.getText().toString();
+
+                if (TextUtils.isEmpty(name1)) {
+                    Toast.makeText(getApplicationContext(), "Enter names!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (TextUtils.isEmpty(phone1)) {
+                    Toast.makeText(getApplicationContext(), "Enter phone number!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 Toast.makeText(getApplicationContext(), "Hello " + name1 + " phone"
                         + phone1 + "Lets get you an ambulance", Toast.LENGTH_LONG).show();
                 name.setText("");

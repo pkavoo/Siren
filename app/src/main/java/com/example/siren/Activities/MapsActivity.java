@@ -1,18 +1,26 @@
 package com.example.siren.Activities;
 
 import android.Manifest;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
+import android.text.format.DateUtils;
 import android.view.View;
+import android.widget.Button;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.core.app.NotificationCompat;
 
+import com.example.siren.NotificationIntentService;
 import com.example.siren.R;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -41,6 +49,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     private Marker currentLocationMarker;
     private Location currentLocation;
     private boolean firstTimeFlag = true;
+    Button buttonrequest;
 
     private final View.OnClickListener clickListener = new View.OnClickListener() {
         @Override
@@ -70,6 +79,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        buttonrequest=findViewById(R.id.buttonrequest);
+        buttonrequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendNotification();
+            }
+        });
         SupportMapFragment supportMapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
         supportMapFragment.getMapAsync(this);
         findViewById(R.id.map).setOnClickListener(clickListener);
@@ -158,4 +174,41 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         fusedLocationProviderClient = null;
         googleMap = null;
     }
+    private void sendNotification() {
+
+        RemoteViews expandedView = new RemoteViews(getPackageName(), R.layout.view_expanded_notofocation);
+       // expandedView.setTextViewText(R.id.timestamp, DateUtils.formatDateTime(this, System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME));
+       // expandedView.setTextViewText(R.id.notification_message, mEditText.getText());
+        // adding action to left button
+        Intent leftIntent = new Intent(this, NotificationIntentService.class);
+        leftIntent.setAction("left");
+       // expandedView.setOnClickPendingIntent(R.id.left_button, PendingIntent.getService(this, 0, leftIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+        // adding action to right button
+        Intent rightIntent = new Intent(this, NotificationIntentService.class);
+        rightIntent.setAction("right");
+      //  expandedView.setOnClickPendingIntent(R.id.right_button, PendingIntent.getService(this, 1, rightIntent, PendingIntent.FLAG_UPDATE_CURRENT));
+
+       // RemoteViews collapsedView = new RemoteViews(getPackageName(), R.layout.view_collapsed_notification);
+     //   collapsedView.setTextViewText(R.id.timestamp, DateUtils.formatDateTime(this, System.currentTimeMillis(), DateUtils.FORMAT_SHOW_TIME));
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+                // these are the three things a NotificationCompat.Builder object requires at a minimum
+                .setSmallIcon(R.drawable.heartbeat)
+                .setContentTitle("New Request")
+                .setContentText("New Emergency request click to check.")
+                // notification will be dismissed when tapped
+                .setAutoCancel(true)
+                // tapping notification will open MainActivity
+                .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, MainActivity.class), 0))
+                // setting the custom collapsed and expanded views
+              //  .setCustomContentView(collapsedView)
+                .setCustomBigContentView(expandedView);
+                // setting style to DecoratedCustomViewStyle() is necessary for custom views to display
+              //  .setStyle(new android.support.v7.app.NotificationCompat.DecoratedCustomViewStyle());
+
+        // retrieves android.app.NotificationManager
+        NotificationManager notificationManager = (android.app.NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        notificationManager.notify(0, builder.build());
+    }
+
 }
