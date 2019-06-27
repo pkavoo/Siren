@@ -626,6 +626,9 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color blue_grey_300
+color blue_grey_400
+color blue_grey_800
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -652,6 +655,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color deep_purple_A400
 color design_bottom_navigation_shadow_color
 color design_default_color_primary
 color design_default_color_primary_dark
@@ -673,6 +677,9 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color green_A400
+color grey_40
+color grey_60
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -723,6 +730,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color purple_A400
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -812,6 +820,7 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen appbar_padding_top
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
@@ -945,6 +954,19 @@ dimen notification_small_icon_size_as_large
 dimen notification_subtext_size
 dimen notification_top_pad
 dimen notification_top_pad_large_text
+dimen spacing_large
+dimen spacing_medium
+dimen spacing_middle
+dimen spacing_mlarge
+dimen spacing_mxlarge
+dimen spacing_small
+dimen spacing_smlarge
+dimen spacing_xlarge
+dimen spacing_xmedium
+dimen spacing_xmlarge
+dimen spacing_xsmall
+dimen spacing_xxlarge
+dimen spacing_xxxlarge
 dimen tooltip_corner_radius
 dimen tooltip_horizontal_padding
 dimen tooltip_margin
@@ -1039,6 +1061,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable btn_purple_a400
 drawable button1
 drawable button2
 drawable buttonrequest
@@ -1069,12 +1092,14 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable heartbeat
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable logo
+drawable logo_small
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1131,6 +1156,7 @@ id barrier
 id beginning
 id blocking
 id bottom
+id btnLogin
 id buttonPanel
 id buttonemergency
 id buttonhelp
@@ -1161,6 +1187,8 @@ id design_navigation_view
 id dimensions
 id direct
 id disableHome
+id edEmail
+id edPassword
 id edit_query
 id end
 id enterAlways
@@ -1175,6 +1203,7 @@ id fill_vertical
 id filled
 id fixed
 id forever
+id forgot_password
 id ghost_view
 id gone
 id group_divider
@@ -1381,6 +1410,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout layout_login
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout notification_action
@@ -1675,6 +1705,7 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style EditText_Grey
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
